@@ -23,7 +23,7 @@ public class Aplicacion {
         cuentaSebas.saldo = 0;
         cuentaSebas.estado = "A";
 
-        miCuenta.retirar(300000);
+        miCuenta.retirar(306000);
 
         System.out.println(miCuenta.consultarSaldo());
         System.out.println(cuentaSebas.consultarSaldo());
