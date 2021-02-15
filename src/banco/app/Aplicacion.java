@@ -20,7 +20,7 @@ public class Aplicacion {
 
         juanSebastian.nombre = "Juan Sebastian";
         cuentaSebas.titular = juanSebastian;
-        cuentaSebas.saldo = 0;
+        cuentaSebas.saldo = 10000;
         cuentaSebas.estado = "A";
 
         miCuenta.retirar(306000);
