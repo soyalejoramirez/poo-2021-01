@@ -18,7 +18,7 @@ public class Aplicacion {
         miCuenta.saldo = 316000;
         miCuenta.estado = "A";
 
-        juanSebastian.nombre = "Juan Sebastian";
+        juanSebastian.nombre = "Juan Sebastian Hincapié";
         cuentaSebas.titular = juanSebastian;
         cuentaSebas.saldo = 10000;
         cuentaSebas.estado = "A";
