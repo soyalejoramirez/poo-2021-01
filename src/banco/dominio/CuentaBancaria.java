@@ -12,6 +12,17 @@ public class CuentaBancaria {
     public String contrasena;
     public String estado;
 
+    public CuentaBancaria(Banco banco, String tipo, Persona titular, String numero, double saldo) {
+        this.banco = banco;
+        this.tipo = tipo;
+        this.titular = titular;
+        this.numero = numero;
+        this.saldo = saldo;
+        this.fechaApertura = new Date();
+        this.contrasena = "0000";
+        this.estado = "A";
+    }
+
     public String consultarSaldo() {
         return "Hola " + this.titular.nombre  + ", su saldo es: " + this.saldo;
     }
