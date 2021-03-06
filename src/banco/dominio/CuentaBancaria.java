@@ -3,14 +3,14 @@ package banco.dominio;
 import java.util.Date;
 
 public class CuentaBancaria {
-    public Banco banco;
-    public String tipo; // Sí es ahorros o corriente
-    public Persona titular;
-    public String numero;
-    public double saldo;
-    public Date fechaApertura;
-    public String contrasena;
-    public String estado;
+    private Banco banco;
+    private String tipo; // Sí es ahorros o corriente
+    private Persona titular;
+    private String numero;
+    private double saldo;
+    private Date fechaApertura;
+    private String contrasena;
+    private String estado;
 
     public CuentaBancaria(Banco banco, String tipo, Persona titular, String numero, double saldo) {
         this.banco = banco;
@@ -24,7 +24,7 @@ public class CuentaBancaria {
     }
 
     public String consultarSaldo() {
-        return "Hola " + this.titular.nombre  + ", su saldo es: " + this.saldo;
+        return "Hola " + this.titular.getNombre()  + ", su saldo es: " + this.saldo;
     }
 
     public boolean retirar(double valorARetirar) {
@@ -59,5 +59,49 @@ public class CuentaBancaria {
         }
 
         //return this.retirar(valorATransferir) && cuentaDestino.consignar(valorATransferir);
+    }
+
+    public Banco getBanco() {
+        return banco;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public Persona getTitular() {
+        return titular;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public Date getFechaApertura() {
+        return fechaApertura;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public void setTitular(Persona titular) {
+        this.titular = titular;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 }

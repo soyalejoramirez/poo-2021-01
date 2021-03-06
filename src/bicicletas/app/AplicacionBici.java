@@ -11,7 +11,8 @@ public class AplicacionBici {
 
         System.out.println(bici.obtenerInformacion());
 
-        bici.cambiarPrecioYColor(3500000, "Esmerald Iris");
+        bici.setPrecio(3500000);
+        bici.setColor("Esmerald Iris");
 
         System.out.println(bici.obtenerInformacion());
     }

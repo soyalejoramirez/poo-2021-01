@@ -1,12 +1,12 @@
 package bicicletas.dominio;
 
 public class Bicicleta {
-    public long serial;
-    public String marca;
-    public String modelo;
-    public String color;
-    public long precio;
-    public double velocidad;
+    private long serial;
+    private String marca;
+    private String modelo;
+    private String color;
+    private long precio;
+    private double velocidad;
 
     public Bicicleta(long serial, String marca, String modelo, String color, long precio) {
         this.serial = serial;
@@ -15,19 +15,6 @@ public class Bicicleta {
         this.color = color;
         this.precio = precio;
         this.velocidad = 0;
-    }
-
-    public void cambiarPrecio(long nuevoPrecio) {
-        this.precio = nuevoPrecio;
-    }
-
-    public void cambiarColor(String nuevoColor) {
-        this.color = nuevoColor;
-    }
-
-    public void cambiarPrecioYColor(long nuevoPrecio, String nuevoColor) {
-        this.cambiarPrecio(nuevoPrecio);
-        this.cambiarColor(nuevoColor);
     }
 
     public String obtenerInformacion() {
@@ -49,5 +36,37 @@ public class Bicicleta {
         }
 
         return false;
+    }
+
+    public long getSerial() {
+        return serial;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public long getPrecio() {
+        return precio;
+    }
+
+    public double getVelocidad() {
+        return velocidad;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setPrecio(long precio) {
+        this.precio = precio;
     }
 }

@@ -6,7 +6,7 @@ public class AppDispensador {
     public static void main(String[] args) {
         DispensadorDePapel dispensador = new DispensadorDePapel("Familia", "Toallas de baño", 40);
 
-        System.out.println("El color: " + dispensador.color);
+        System.out.println("El color: " + dispensador.getColor());
 
         dispensador.llenar();
         dispensador.dispensar();
@@ -14,10 +14,10 @@ public class AppDispensador {
         dispensador.dispensar();
         dispensador.dispensar();
 
-        System.out.println("El dispensador tiene " + dispensador.cantidadActual + " toallas.");
+        System.out.println("El dispensador tiene " + dispensador.getCantidadActual() + " toallas.");
 
         dispensador.recargar(4);
 
-        System.out.println("El dispensador tiene " + dispensador.cantidadActual + " toallas.");
+        System.out.println("El dispensador tiene " + dispensador.getCantidadActual() + " toallas.");
     }
 }
