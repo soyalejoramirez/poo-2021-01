@@ -73,7 +73,7 @@ public class ApplicationUCO {
 //        for(Estudiante estudiante: poo.getEstudiantes()) {
 //            System.out.println(estudiante.getNombre());
 //        }
-/*
+
         poo.getEstudiantes().forEach(estudiante -> {
             double definitiva = estudiante.getNota().calcularDefinitiva();
 
@@ -82,6 +82,6 @@ public class ApplicationUCO {
             } else {
                 System.out.println(estudiante.getNombre() + " perdiste " + poo.getNombre() + " en " + definitiva + "! :(");
             }
-        });*/
+        });
     }
 }
