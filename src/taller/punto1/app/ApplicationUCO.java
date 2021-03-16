@@ -12,10 +12,25 @@ public class ApplicationUCO {
         Docente profe = new Docente("123456", "Alejandro Ramírez");
         Asignatura poo = new Asignatura("Programación Orientada a Objetos", profe);
 
-        Estudiante julio = new Estudiante("123", "Julio Salas");
-        Estudiante juanPablo = new Estudiante("321", "Juan Pablo Montoya");
-        Estudiante juliana = new Estudiante("567", "Juliana Zapata");
-        Estudiante jero = new Estudiante("987", "Jeronimo Escobar");
+        System.out.println("ANTES Existen " + Estudiante.getNroEstudiantesCreados() + " estudiantes");
+
+        Estudiante julio = Estudiante.matricular("123", "Julio Salas");
+        Estudiante juanPablo = Estudiante.matricular("321", "Juan Pablo Montoya");
+        Estudiante juliana = Estudiante.matricular("567", "Juliana Zapata");
+        Estudiante jero = Estudiante.matricular("987", "Jeronimo Escobar");
+        Estudiante vale = Estudiante.matricular("777", "Valentina Velasquez");
+        Estudiante juanManuel = Estudiante.matricular("432", "Juan Manuel Zuluaga");
+        Estudiante julian = Estudiante.matricular("842", "Julian David Suarez");
+
+        System.out.println("Julio: " + julio);
+        System.out.println("Juan Pablo: " + juanPablo);
+        System.out.println("Juliana: " + juliana);
+        System.out.println("Jero: " + jero);
+        System.out.println("Vale: " + vale);
+        System.out.println("juanManuel: " + juanManuel);
+        System.out.println("julian: " + julian);
+
+        System.out.println("DESPUÉS Existen " + Estudiante.getNroEstudiantesCreados() + " estudiantes");
 
         Nota notaJulio = new Nota(poo);
         notaJulio.setNotasSeguimiento(Arrays.asList(3.2, 5.0, 3.0, 2.1, 5.0));
@@ -58,7 +73,7 @@ public class ApplicationUCO {
 //        for(Estudiante estudiante: poo.getEstudiantes()) {
 //            System.out.println(estudiante.getNombre());
 //        }
-
+/*
         poo.getEstudiantes().forEach(estudiante -> {
             double definitiva = estudiante.getNota().calcularDefinitiva();
 
@@ -67,6 +82,6 @@ public class ApplicationUCO {
             } else {
                 System.out.println(estudiante.getNombre() + " perdiste " + poo.getNombre() + " en " + definitiva + "! :(");
             }
-        });
+        });*/
     }
 }

@@ -1,21 +1,34 @@
 package taller.punto1.dominio;
 
 public class Estudiante {
+    public static final int CUPOS = 6;
+    private static int nroEstudiantesCreados;
+
     private String identificacion;
     private String nombre;
     private int semestreActual;
     private char genero;
     private Nota nota;
 
-    public Estudiante(String identificacion, String nombre) {
+    private Estudiante(String identificacion, String nombre) {
         this.identificacion = identificacion;
         this.nombre = nombre;
+        nroEstudiantesCreados++;
     }
 
-    public Estudiante(String identificacion, String nombre, int semestreActual) {
-        this.identificacion = identificacion;
-        this.nombre = nombre;
+    private Estudiante(String identificacion, String nombre, int semestreActual) {
+        this(identificacion, nombre);
         this.semestreActual = semestreActual;
+    }
+
+    public static Estudiante matricular(String identificacion, String nombre) {
+        if (nroEstudiantesCreados < CUPOS) {
+            Estudiante est = new Estudiante(identificacion, nombre);
+            return est;
+        } else {
+            System.out.println("No se pueden crear más objetos. Cupo lleno. " + nombre);
+            return null;
+        }
     }
 
     public String getIdentificacion() {
@@ -52,5 +65,13 @@ public class Estudiante {
 
     public void setNota(Nota nota) {
         this.nota = nota;
+    }
+
+    public static int getNroEstudiantesCreados() {
+        return nroEstudiantesCreados;
+    }
+
+    public static void setNroEstudiantesCreados(int nroEstudiantesCreados) {
+        Estudiante.nroEstudiantesCreados = nroEstudiantesCreados;
     }
 }
