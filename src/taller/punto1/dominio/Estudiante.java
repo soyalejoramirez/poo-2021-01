@@ -26,7 +26,6 @@ public class Estudiante {
             Estudiante est = new Estudiante(identificacion, nombre);
             return est;
         } else {
-            System.out.println("No se pueden crear más objetos. Cupo lleno. " + nombre);
             return null;
         }
     }

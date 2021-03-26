@@ -36,7 +36,6 @@ public class DispensadorDePapel {
 
     public void llenar() {
         this.cantidadActual = this.capacidadMaxima;
-        System.out.println("Se llenó el dispensador");
     }
 
     public boolean recargar(int cantidadARecargar) {
