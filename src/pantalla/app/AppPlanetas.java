@@ -15,9 +15,22 @@ public class AppPlanetas {
     public static void main(String[] args) {
         List<String> opciones = Arrays.asList("Marte", "Mercurio", "Tierra", "Venus");
         boolean seguirEjecutando = true;
+        double pesoIngresado = 0;
+        String nombre = null;
 
-        String nombre = JOptionPane.showInputDialog(null, "¿Cómo te llamas?", "Peso en planetas", JOptionPane.QUESTION_MESSAGE);
-        double pesoIngresado = Double.parseDouble(JOptionPane.showInputDialog(null, nombre + ", ¿cuánto pesas en kg?", "Peso en planetas", JOptionPane.QUESTION_MESSAGE));
+        do {
+            nombre = JOptionPane.showInputDialog(null, "¿Cómo te llamas?", "Peso en planetas", JOptionPane.QUESTION_MESSAGE);
+        } while (nombre == null || nombre.trim().length() == 0);
+
+        do {
+            try {
+                String pesoTexto = JOptionPane.showInputDialog(null, nombre + ", ¿cuánto pesas en kg?", "Peso en planetas", JOptionPane.QUESTION_MESSAGE);
+                pesoIngresado = Double.parseDouble(pesoTexto);
+            } catch (Exception e) {
+                mostrarMensaje("Peso inválido");
+            }
+        } while (pesoIngresado <= 0);
+        
 
         while(seguirEjecutando) {
             int opcion = JOptionPane.showOptionDialog(null, "¿En qué planeta quieres saber tu peso?", "Peso en planetas", 0,JOptionPane.QUESTION_MESSAGE,null, opciones.toArray(), null);
