@@ -1,27 +1,47 @@
 package herencia.app;
 
-import herencia.dominio.BicicletaCrono;
-import herencia.dominio.BicicletaElectrica;
-import herencia.dominio.Taxi;
-import herencia.dominio.Vehiculo;
+import herencia.dominio.vehiculos.Bicicleta;
+import herencia.dominio.vehiculos.BicicletaCrono;
+import herencia.dominio.vehiculos.BicicletaMTB;
+import herencia.dominio.vehiculos.Taxi;
+import herencia.dominio.vehiculos.Vehiculo;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AppHerencia {
     public static void main(String[] args) {
-        Vehiculo vehiculo = new Vehiculo();
-        BicicletaCrono crono = new BicicletaCrono();
-        Taxi taxi = new Taxi();
-        BicicletaElectrica electrica = new BicicletaElectrica();
+        List<Vehiculo> vehiculos = new ArrayList<>();
 
-        vehiculo.acelerar();
-        System.out.println("Vehiculo velocidad: " + vehiculo.getVelocidad() + " km/h");
+        Vehiculo vehiculo = new Vehiculo("Renault", "Clio");
+        Vehiculo crono = new BicicletaCrono("Pinarello", "Giro2021");
+        Vehiculo taxi = new Taxi("Chevrolet", "Spark", "Taxiapp");
+        Vehiculo bici = new Bicicleta("GW", "Shark");
+        Vehiculo mtb = new BicicletaMTB("Trek", "Marlin 7");
 
-        crono.acelerar();
-        System.out.println("Bicicleta de contrarreloj velocidad: " + crono.getVelocidad() + " km/h");
+        vehiculos.add(vehiculo);
+        vehiculos.add(crono);
+        vehiculos.add(taxi);
+        vehiculos.add(bici);
+        vehiculos.add(mtb);
 
-        taxi.acelerar();
-        System.out.println("Taxi velocidad: " + taxi.getVelocidad() + " km/h");
+        vehiculos.forEach(vehi -> {
+            vehi.acelerar();
+            System.out.println(vehi + " va a " + vehi.getVelocidad() + " km/h");
+        });
 
-        electrica.acelerar();
-        System.out.println("Bicicleta electrica velocidad: " + electrica.getVelocidad() + " km/h");
+        vehiculos.forEach(vehi -> {
+            if (vehi instanceof Taxi) {
+                System.out.println("ENTRÓ PORQUE ES TAXI!");
+                ((Taxi) vehi).recogerPasajero();
+                ((Taxi) vehi).recogerPasajero();
+
+                System.out.println("Lleva " + ((Taxi) vehi).getNroPasajeros() + " pasajeros");
+            }
+
+            if (vehi instanceof BicicletaMTB) {
+                System.out.println("¡EEEEEEENTRÓ PORQUE ES UNA BICI! ");
+            }
+        });
     }
 }

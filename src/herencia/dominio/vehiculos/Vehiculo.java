@@ -1,4 +1,4 @@
-package herencia.dominio;
+package herencia.dominio.vehiculos;
 
 import java.util.Random;
 
@@ -7,15 +7,24 @@ public class Vehiculo {
     private String marca;
     private String modelo;
     private int anioModelo;
-    private double velocidad;
+    protected double velocidad;
+
+    public Vehiculo(String marca, String modelo) {
+        this.marca = marca;
+        this.modelo = modelo;
+    }
 
     public void acelerar() {
-        System.out.println("Acelerandoooooo!");
         this.velocidad += new Random().nextInt(60);
     }
 
     public void frenar() {
         this.velocidad -= new Random().nextInt(15);
+    }
+
+    @Override
+    public String toString() {
+        return "Vehiculo";
     }
 
     public String getMatricula() {

@@ -1,8 +1,17 @@
-package herencia.dominio;
+package herencia.dominio.vehiculos;
 
 public class Bicicleta extends Vehiculo {
     private int nroCambios;
     private double cadencia;
+
+    public Bicicleta(String marca, String modelo) {
+        super(marca, modelo);
+    }
+
+    @Override
+    public String toString() {
+        return "Bicicleta";
+    }
 
     public int getNroCambios() {
         return nroCambios;
