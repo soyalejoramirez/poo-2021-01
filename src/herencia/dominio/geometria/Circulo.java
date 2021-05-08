@@ -16,4 +16,9 @@ public class Circulo extends FiguraGemetrica {
     public double calcularPerimetro() {
         return 2 * Math.PI * radio;
     }
+
+    @Override
+    public String toString() {
+        return "Circulo";
+    }
 }
