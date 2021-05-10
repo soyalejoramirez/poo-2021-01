@@ -1,6 +1,6 @@
 package herencia.dominio.vehiculos;
 
-public class Bicicleta extends Vehiculo {
+public abstract class Bicicleta extends Vehiculo {
     private int nroCambios;
     private double cadencia;
 

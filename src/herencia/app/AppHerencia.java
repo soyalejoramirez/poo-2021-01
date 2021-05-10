@@ -3,6 +3,7 @@ package herencia.app;
 import herencia.dominio.vehiculos.Bicicleta;
 import herencia.dominio.vehiculos.BicicletaCrono;
 import herencia.dominio.vehiculos.BicicletaMTB;
+import herencia.dominio.vehiculos.BicicletaRuta;
 import herencia.dominio.vehiculos.Taxi;
 import herencia.dominio.vehiculos.Vehiculo;
 
@@ -13,10 +14,10 @@ public class AppHerencia {
     public static void main(String[] args) {
         List<Vehiculo> vehiculos = new ArrayList<>();
 
-        Vehiculo vehiculo = new Vehiculo("Renault", "Clio");
+        Vehiculo vehiculo = new BicicletaRuta("Cannondale", "R7");
         Vehiculo crono = new BicicletaCrono("Pinarello", "Giro2021");
         Vehiculo taxi = new Taxi("Chevrolet", "Spark", "Taxiapp");
-        Vehiculo bici = new Bicicleta("GW", "Shark");
+        Vehiculo bici = new BicicletaMTB("GW", "Shark");
         Vehiculo mtb = new BicicletaMTB("Trek", "Marlin 7");
 
         vehiculos.add(vehiculo);

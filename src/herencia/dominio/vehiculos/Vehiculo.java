@@ -2,7 +2,7 @@ package herencia.dominio.vehiculos;
 
 import java.util.Random;
 
-public class Vehiculo {
+public abstract class Vehiculo {
     private String matricula;
     private String marca;
     private String modelo;
@@ -14,9 +14,7 @@ public class Vehiculo {
         this.modelo = modelo;
     }
 
-    public void acelerar() {
-        this.velocidad += new Random().nextInt(60);
-    }
+    public abstract void acelerar();
 
     public void frenar() {
         this.velocidad -= new Random().nextInt(15);

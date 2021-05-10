@@ -6,6 +6,11 @@ public class BicicletaRuta extends Bicicleta {
     }
 
     @Override
+    public void acelerar() {
+        this.velocidad = 57;
+    }
+
+    @Override
     public String toString() {
         return "Bicicleta de ruta";
     }

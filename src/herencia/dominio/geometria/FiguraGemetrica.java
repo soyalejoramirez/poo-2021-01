@@ -1,12 +1,6 @@
 package herencia.dominio.geometria;
 
-public class FiguraGemetrica {
-
-    public double calcularArea() {
-        return 0;
-    }
-
-    public double calcularPerimetro() {
-        return 0;
-    }
+public abstract class FiguraGemetrica {
+    public abstract double calcularArea();
+    public abstract double calcularPerimetro();
 }
